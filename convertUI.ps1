@@ -1,1 +1,1 @@
-pyuic5 -x .\qt_designer.ui -o plot2.py
+pyside2-uic qt_designer.ui -o mainwindow.py
