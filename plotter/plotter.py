@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 # for metigating the notfounderror
 try:
-    from utils.utils import GetAllowedChars, ErrorDialog, GetNumberInput, AddWidgetsToLayout, EvaluateExpression
+    from plotter.utils import GetAllowedChars, ErrorDialog, GetNumberInput, AddWidgetsToLayout, EvaluateExpression
 except ModuleNotFoundError:
     from utils import GetAllowedChars, ErrorDialog, GetNumberInput, AddWidgetsToLayout, EvaluateExpression
 
@@ -60,11 +60,11 @@ class Window(QDialog):
                                      self.toolbar], QVBoxLayout())
         self.setLayout(layout)
         self.setWindowTitle("function plotter")
-        print(" figure before", self.figure)
-        print(" self.before after  ", self.canvas)
+        # print(" figure before", self.figure)
+        # print(" self.before after  ", self.canvas)
 
     def plot(self):
-        ''' plot some random stuff '''
+        ''' plot the expression '''
         # random data
 
         rangeMin = int(self.txtMin.displayText().rstrip())
@@ -77,8 +77,8 @@ class Window(QDialog):
                              'info': "character {} at index {} of expression isn't allowed ".format(char, index),
                              'detail': "there is a syntax error please recheck your expression and make sure you expression is valid like x^2+2*x+3",
                              })
-                print(
-                    "character {} at index {} of expression isn't allowed ".format(char, index))
+                # print(
+                #     "character {} at index {} of expression isn't allowed ".format(char, index))
 
         expression = expression.replace('^', '**')
         # check the expression
@@ -95,14 +95,13 @@ class Window(QDialog):
 
         # create an axis
         self.ax = self.figure.add_subplot(111)
+        self.ax.set_xlabel("x")
+        self.ax.set_ylabel("y")
 
-        self.ax.plot(data)
+        self.ax.plot(np.arange(rangeMin, rangeMax+1), data)
         self.ax.grid(True, which="both")
         # refresh canvas
         self.canvas.draw()
-
-        print(" figure after  ", self.figure)
-        print(" self.canvas after  ", self.canvas)
 
 
 if __name__ == '__main__':
