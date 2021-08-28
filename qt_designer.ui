@@ -116,6 +116,9 @@
      </widget>
     </item>
     <item>
+     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+    </item>
+    <item>
      <widget class="QWidget" name="pltArea" native="true"/>
     </item>
    </layout>
