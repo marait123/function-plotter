@@ -35,4 +35,5 @@
 # testing
 * you can run the gui testing pytest-qt using `pytest  .\plotter\test_plotter.py`
 * you can run the utils testing pytest using `pytest .\plotter\test_utils.py`
+* or you can run both by running testing.ps1 script
 ![ testing image ](https://github.com/marait123/function-plotter/blob/main/images/testing.JPG)
