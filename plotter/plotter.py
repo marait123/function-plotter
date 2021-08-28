@@ -18,11 +18,27 @@ except ModuleNotFoundError:
 
 class Window(QDialog):
     def __init__(self, parent=None):
+        """                
+        Parameters
+        ----------
+        self : Window
+            the window instance
+        parent : QApplication optional
+            this is the application that will host the window instance
+        """
         super(Window, self).__init__(parent)
         self.allowedChars = GetAllowedChars()
         self.set_ui()
 
     def set_ui(self):
+        """                
+        Summary:
+            this function prepares the ui (widgets) that are to be displayed on the window
+        Parameters
+        ----------
+        self : Window
+            the window instance
+        """
         # a figure instance to plot on
         self.figure = plt.figure()
 
@@ -64,7 +80,14 @@ class Window(QDialog):
         # print(" self.before after  ", self.canvas)
 
     def plot(self):
-        ''' plot the expression '''
+        """                
+        Summary:
+            plot the expression found in the expression input text using the ranges provided in the input ranges
+        Parameters
+        ----------
+        self : Window
+            the window instance
+        """
         # random data
 
         rangeMin = int(self.txtMin.displayText().rstrip())

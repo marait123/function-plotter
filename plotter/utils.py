@@ -75,7 +75,20 @@ def GetNumberInput(defaultValue) -> QLineEdit:
 
 
 def AddWidgetsToLayout(widgets: List, layout: QtWidgets.QBoxLayout) -> QtWidgets.QBoxLayout:
+    """
+    Parameters
+    ----------
+    widgets : List
+        the list of widges you want to add to the layout box
 
+    layout : QtWidgets.QBoxLayout
+        a vertical or horizontal layout box you want to add the widgets to
+
+    Returns
+    -------
+    QtWidgets.QBoxLayout
+        the layout after adding the list of widgets
+    """
     for widget in widgets:
         layout.addWidget(widget)
     return layout
