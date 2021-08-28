@@ -18,7 +18,21 @@
 
 # running
 * after installing the requirements you can run the code using `python .\plotter\plotter.py`
+# images
+
+
+## drawing x^2
+![ x2 image ](https://github.com/marait123/function-plotter/blob/main/images/x2.JPG)
+
+## drawing x^3+3*x+500...
+![ x3 image ](https://github.com/marait123/function-plotter/blob/main/images/x3.JPG)
+
+## error when adding invalid formulae (expression)
+![ error image ](https://github.com/marait123/function-plotter/blob/main/images/error1.JPG)
+
+
+
 # testing
 * you can run the gui testing pytest-qt using `pytest  .\plotter\test_plotter.py`
-
 * you can run the utils testing pytest using `pytest .\plotter\test_utils.py`
+![ testing image ](https://github.com/marait123/function-plotter/blob/main/images/testing.JPG)
