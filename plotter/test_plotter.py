@@ -23,6 +23,15 @@ def test_plot_button(qtbot, dialog):
     assert dialog.ax.has_data()
 
 
+def test_valid_expression_button(qtbot, dialog):
+    dialog.txtEquation.clear()
+    qtbot.keyClicks(dialog.txtEquation, '(x^3)+2*x')
+
+    qtbot.mouseClick(dialog.btnPlot, QtCore.Qt.LeftButton)
+    # qt_api.qWarning(str("warning "))
+    assert dialog.ax.has_data()
+
+
 def test_labels(qtbot, dialog):
     assert dialog.lblMin.text() == "enter min value"
     assert dialog.lblMax.text() == "enter max value: "
