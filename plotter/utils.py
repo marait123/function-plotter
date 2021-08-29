@@ -21,7 +21,7 @@ def GetAllowedChars() -> List:
 
     """
     allowedChars = [str(i) for i in range(10)]
-    for char in ["x", "-", "+", "*", "/", "^", " "]:
+    for char in ["x", "-", "+", "*", "/", "^", " ", ")", "("]:
         allowedChars.append(char)
     return allowedChars
 
